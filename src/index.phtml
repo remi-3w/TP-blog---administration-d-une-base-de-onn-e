@@ -1,0 +1,36 @@
+<!-- Page d'accueil -->
+<h2><i class="fa fa-home"></i> Accueil</h2>
+
+<!-- Liste des articles du blog -->
+<ul class="post-list">
+    <?php foreach($posts as $post): ?>
+        <br>
+        <br>
+        <li class="post">
+         <div class="card" class="m-3"style="width: 18rem;">
+         <h3 class="card-title" title="Consulter l'article"><?= htmlspecialchars($post['Title']) ?></h3>
+         
+         <?php if ($post['Category_Id']==2):?>
+          <img src="/images/jeu-video.jpg" class="card-img-top" alt="...">;
+         
+          <?php else: ?>
+                <img src="/images/voyage.jpg" class="card-img-top" alt="...">;
+                <?php endif ?>
+            
+            <div class="card-body">
+                
+                <p class="card-text"> <article><?= substr(htmlspecialchars($post['Contents']), 0, 100) ?>&nbsp;[...]</article><br></p>
+            </div>
+            
+            <div class="card-body">
+                <i class="fa fa-hand-o-right"></i>&nbsp; <a href=show_post.php?id=<?= intval($post['Id']) ?>  " class="card-link">Soumettre un commentaire</a>
+            </div>
+        </div>     
+            <!-- Seul un extrait de l'article du blog est affiché -->
+            <small>
+                Rédigé par <?= htmlspecialchars($post['FirstName']) ?> <?= htmlspecialchars($post['LastName']) ?>
+                le <?= htmlspecialchars($post['CreationTimestamp']) ?>
+            </small><br/>
+        </li>
+    <?php endforeach; ?>
+</ul>

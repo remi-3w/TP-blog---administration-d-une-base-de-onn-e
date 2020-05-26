@@ -1,0 +1,38 @@
+<h2><i class="fa fa-cogs"></i> Panneau d'administration</h2>
+
+<nav>
+    <a href="add_post.php">Rédiger un nouvel article</a> 
+</nav>
+<br/>
+<h3>Liste des articles</h3>
+<br/>
+
+
+<table class="table table-bordered text-center">   
+    <tbody>
+      <thead class="container-fluid col-12 thead-dark"> 
+      <tr >
+        <th scope="col">Article</th>
+        <th scope="col">Auteur</th>
+        <th scope="col">Catégorie</th>
+        <th scope="col">modifier</th>
+        <th scope="col">supprimer</th>            
+    </tr>
+</thead>
+    
+    
+  <?php foreach($posts as $post): ?>
+   
+        <tr class="container-fluid">
+          <td scope="col"><a href="show_post.php?id=<?= intval($post['Id']) ?>" target="_blank"><?= htmlspecialchars($post['Title']) ?></a></td>
+          <td scope="col"><?= htmlspecialchars($post['FirstName']) ?> <?= htmlspecialchars($post['LastName']) ?></td>
+          <td scope="col"><?= htmlspecialchars($post['Category_Name']) ?></td>
+          <td scope="col"><a class="edit" href="edit_post.php?id=<?= intval($post['Id']) ?>"><i class="fa fa-pencil"></i></a></td>
+          <td scope="col"><a class="remove" href="delete_post.php?id=<?= intval($post['Id']) ?>"><i class="fa fa-remove text-danger"></i></a></td>
+        </tr>
+
+              
+        <?php endforeach ?>
+ 
+</tbody>
+</table>

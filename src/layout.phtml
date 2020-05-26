@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title >Encore un Blog ?! #nonMaisAllo</title>
+
+    <!-- Feuilles de style externes -->
+    <link rel="stylesheet" href="css/normalize-3.0.3.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+    <!-- Feuilles de style de l'application -->
+    <link rel="stylesheet" href="css/blog-main.css">
+    <link rel="stylesheet" href="css/blog-theme.css">
+    <link rel="stylesheet" href="css/ui-button.css">
+    <link rel="stylesheet" href="css/ui-form.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <!-- En-tête commune de l'application -->
+    <header class="blog-header">
+       
+        <h1><a href="index.php" ><i class="fa fa-microphone" ></i> Encore un Blog ?! #nonMaisAllo</a></h1>
+        <nav class="m-1">
+            <a href="exo.php" class="text-light"><i class="fa fa-cubes right"></i> Enoncé de l'exercice</a>
+            <a href="admin.php" class="text-light"><i class="fa fa-cogs right"></i> Administration</a>
+        </nav>
+       
+    </header>
+
+    <main>
+        <!-- Chargement du template PHTML spécifié par le programme PHP -->
+        <?php include $template.'.phtml' ?>
+    </main>
+
+    <!-- Pied de page commun de l'application -->
+    <footer>   
+       <div class="container-fluid text-center d-flex row m-0 p-0 ">
+            
+                <div class="col-lg-4 col-md-3 col-sm-3 col-12 justify-content-center ">
+                    <h4">Encore un Blog ?! #nonMaisAllo</h4>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 justify-content-center container-fluid row m-0 p-0">
+                    <div class="col-4">
+                        <img class="img-fluid button share_twitter "src="images/twittersvg.svg" data-url="" alt="Logo twitter">
+                        </a></img>
+                    </div>                        
+                    <div class="col-4">
+                        <img class="img-fluid text-center button share_facebook" src="images/facebooksvg.svg" data-url=""  alt="Logo Facebook">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid button share_linkedin" src="images/linkedinsvg.svg " data-url="" alt="LogoLinkedin">
+                    </div>
+                
+            </div>
+    </div>
+    </footer>
+</body>
+</html>
